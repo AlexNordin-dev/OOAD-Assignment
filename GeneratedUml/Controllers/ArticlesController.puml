@@ -1,0 +1,13 @@
+@startuml
+class ArticlesController {
+    + ArticlesController(articleService:IArticleService)
+    + <<async>> GetAllArticles() : Task<ActionResult<IEnumerable<ArticleResponse>>>
+    + <<async>> GetArticleById(id:int) : Task<ActionResult<ArticleResponse>>
+    + <<async>> GetArticlesByGroupId(groupId:int) : Task<ActionResult<IEnumerable<ArticleResponse>>>
+    + <<async>> CreateArticle(articleRequest:ArticleRequest) : Task<ActionResult<ArticleResponse>>
+    + <<async>> UpdateArticle(id:int, articleRequest:ArticleRequest) : Task<ActionResult<ArticleResponse>>
+    + <<async>> DeleteArticle(id:int) : Task<IActionResult>
+}
+ControllerBase <|-- ArticlesController
+ArticlesController --> "_articleService" IArticleService
+@enduml

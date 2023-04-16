@@ -1,0 +1,7 @@
+@startuml
+class XCoreDataBase <<partial>> {
+    # <<override>> Up(migrationBuilder:MigrationBuilder) : void
+    # <<override>> Down(migrationBuilder:MigrationBuilder) : void
+}
+Migration <|-- XCoreDataBase
+@enduml

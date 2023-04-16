@@ -1,0 +1,11 @@
+@startuml
+class ArticleRequest {
+    + Title : string <<get>> <<set>>
+    + Content : string <<get>> <<set>>
+    + ArticleGroupId : int <<get>> <<set>>
+}
+class "ICollection`1"<T> {
+}
+ArticleRequest --> "AuthorIds<int>" "ICollection`1"
+ArticleRequest --> "TagIds<int>" "ICollection`1"
+@enduml

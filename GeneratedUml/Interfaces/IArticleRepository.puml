@@ -1,0 +1,10 @@
+@startuml
+interface IArticleRepository {
+    GetAllArticles() : Task<IEnumerable<Article>>
+    GetArticleById(id:int) : Task<Article>
+    GetArticlesByGroupId(groupId:int) : Task<IEnumerable<Article>>
+    AddArticle(article:Article) : Task
+    UpdateArticle(article:Article) : Task
+    DeleteArticle(id:int) : Task
+}
+@enduml

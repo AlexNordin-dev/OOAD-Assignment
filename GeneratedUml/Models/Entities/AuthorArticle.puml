@@ -1,0 +1,8 @@
+@startuml
+class AuthorArticle {
+    + AuthorId : int <<get>> <<set>>
+    + ArticleId : int <<get>> <<set>>
+}
+AuthorArticle --> "Author" Author
+AuthorArticle --> "Article" Article
+@enduml

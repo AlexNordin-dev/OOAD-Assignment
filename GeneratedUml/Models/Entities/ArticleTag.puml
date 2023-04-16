@@ -1,0 +1,8 @@
+@startuml
+class ArticleTag {
+    + ArticleId : int <<get>> <<set>>
+    + TagId : int <<get>> <<set>>
+}
+ArticleTag --> "Article" Article
+ArticleTag --> "Tag" Tag
+@enduml

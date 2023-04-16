@@ -1,0 +1,13 @@
+@startuml
+class ArticleRepository {
+    + ArticleRepository(context:DataContext)
+    + <<async>> GetAllArticles() : Task<IEnumerable<Article>>
+    + <<async>> GetArticleById(id:int) : Task<Article>
+    + <<async>> GetArticlesByGroupId(groupId:int) : Task<IEnumerable<Article>>
+    + <<async>> AddArticle(article:Article) : Task
+    + <<async>> UpdateArticle(article:Article) : Task
+    + <<async>> DeleteArticle(id:int) : Task
+}
+IArticleRepository <|-- ArticleRepository
+ArticleRepository --> "_context" DataContext
+@enduml

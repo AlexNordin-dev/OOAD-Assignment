@@ -1,0 +1,21 @@
+@startuml
+!include .\\Program.puml
+!include .\\Contexts\DataContext.puml
+!include .\\Controllers\ArticlesController.puml
+!include .\\DTOs\ArticleRequest.puml
+!include .\\DTOs\ArticleResponse.puml
+!include .\\Interfaces\IArticleRepository.puml
+!include .\\Interfaces\IArticleService.puml
+!include .\\Migrations\20230416163320_XCoreDataBase.puml
+!include .\\Migrations\20230416163320_XCoreDataBase.Designer.puml
+!include .\\Migrations\DataContextModelSnapshot.puml
+!include .\\Models\ArticleExtensions.puml
+!include .\\Repositories\ArticleRepository.puml
+!include .\\Services\ArticleService.puml
+!include .\\Models\Entities\Article.puml
+!include .\\Models\Entities\ArticleGroup.puml
+!include .\\Models\Entities\ArticleTag.puml
+!include .\\Models\Entities\Author.puml
+!include .\\Models\Entities\AuthorArticle.puml
+!include .\\Models\Entities\Tag.puml
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class Tag {
+    + Id : int <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+}
+class "ICollection`1"<T> {
+}
+Tag --> "ArticleTags<ArticleTag>" "ICollection`1"
+@enduml

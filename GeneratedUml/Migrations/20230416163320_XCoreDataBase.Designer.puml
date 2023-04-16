@@ -1,0 +1,5 @@
+@startuml
+class XCoreDataBase <<partial>> {
+    # <<override>> BuildTargetModel(modelBuilder:ModelBuilder) : void
+}
+@enduml

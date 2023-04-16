@@ -1,0 +1,15 @@
+@startuml
+class ArticleResponse {
+    + Id : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+    + Content : string <<get>> <<set>>
+    + ArticleGroupId : int <<get>> <<set>>
+    + ArticleGroupName : string <<get>> <<set>>
+}
+class "ICollection`1"<T> {
+}
+ArticleResponse --> "CreatedAt" DateTime
+ArticleResponse --> "UpdatedAt" DateTime
+ArticleResponse --> "AuthorNames<string>" "ICollection`1"
+ArticleResponse --> "Tags<string>" "ICollection`1"
+@enduml

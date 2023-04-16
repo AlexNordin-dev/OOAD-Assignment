@@ -1,0 +1,15 @@
+@startuml
+class DataContext {
+    + DataContext(options:DbContextOptions<DataContext>)
+    # <<override>> OnModelCreating(modelBuilder:ModelBuilder) : void
+}
+class "DbSet`1"<T> {
+}
+DbContext <|-- DataContext
+DataContext --> "Articles<Article>" "DbSet`1"
+DataContext --> "ArticleGroups<ArticleGroup>" "DbSet`1"
+DataContext --> "Authors<Author>" "DbSet`1"
+DataContext --> "Tags<Tag>" "DbSet`1"
+DataContext --> "AuthorArticles<AuthorArticle>" "DbSet`1"
+DataContext --> "ArticleTags<ArticleTag>" "DbSet`1"
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class ArticleExtensions <<static>> {
+    + {static} ToArticleResponse(article:Article) : ArticleResponse
+    + {static} ToArticle(request:ArticleRequest) : Article
+    + {static} UpdateArticle(request:ArticleRequest, article:Article) : void
+}
+@enduml
