@@ -16,17 +16,19 @@ namespace xCore.Repositories
 
         public async Task<IEnumerable<Article>> GetAllArticles()
         {
-            return await _context.Articles.Include(a => a.ArticleGroup).ToListAsync();
+            var authors = _context.Authors.ToList();
+            var tags = _context.Tags.ToList();
+            return await _context.Articles.Include(a => a.ArticleGroup).Include(x=> x.AuthorArticles).Include(t=>t.ArticleTags).ToListAsync();
         }
 
         public async Task<Article> GetArticleById(int id)
         {
-            return await _context.Articles.Include(a => a.ArticleGroup).FirstOrDefaultAsync(a => a.Id == id);
+            return await _context.Articles.Include(a => a.ArticleGroup).Include(x => x.AuthorArticles).Include(t => t.ArticleTags).FirstOrDefaultAsync(a => a.Id == id);
         }
 
         public async Task<IEnumerable<Article>> GetArticlesByGroupId(int groupId)
         {
-            return await _context.Articles.Include(a => a.ArticleGroup).Where(a => a.ArticleGroupId == groupId).ToListAsync();
+            return await _context.Articles.Include(a => a.ArticleGroup).Include(x => x.AuthorArticles).Include(t => t.ArticleTags).Where(a => a.ArticleGroupId == groupId).ToListAsync();
         }
 
         public async Task AddArticle(Article article)

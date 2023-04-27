@@ -8,10 +8,9 @@ namespace xCore.DTOs
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-        public int ArticleGroupId { get; set; }
+        public DateTime UpdatedAt { get; set; }       
         public string ArticleGroupName { get; set; }
-        public ICollection<string> AuthorNames { get; set; }
-        public ICollection<string> Tags { get; set; }
+        public List<string> AuthorNames { get; set; }
+        public List<string> Tags { get; set; }
     }
 }

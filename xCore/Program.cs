@@ -15,7 +15,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("APIData")));
 builder.Services.AddScoped<IArticleService, ArticleService>();
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
-
+builder.Services.AddScoped<AuthorsRepository>();
+builder.Services.AddScoped<TagsRepository>();
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
